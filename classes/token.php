@@ -34,14 +34,7 @@ class Token
 
     function generate()
     {
-        // это команда может быть не доступа, если нету соотвествующего модуля
-        $token = openssl_random_pseudo_bytes(16);
-
-        $token = bin2hex($token);
-
-        // тогда можно воспользоваться вот этой быдло-конструкцией
-        // тут генерится 40 значный хеш
-        // $token = sha1(mt_rand(1, 90000) . 'DUNDUKSALTYBOOOOOY');
+        $token = sha1(mt_rand(1, 90000) . 'DUNDUKSALTYBOOOOOY');
 
         return $token;
     }
